@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
   " General
     Plug 'itchyny/lightline.vim'
+    Plug 'mengelbrecht/lightline-bufferline'
     Plug 'sheerun/vim-polyglot'
     Plug 'voldikss/vim-floaterm', {
           \ 'on': [

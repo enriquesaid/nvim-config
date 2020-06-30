@@ -4,8 +4,10 @@ let g:lightline = {
       \   'left': [ ['mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
       \ },
+      \ 'tabline': {
+      \   'right': [ ['fugitive'] ],
+      \ },
       \ 'component_function': {
-      \   'fire': 'Fire',
       \   'fugitive': 'FugitiveHead',
       \   'readonly': 'MyReadonly',
       \   'filename': 'MyFilename',
