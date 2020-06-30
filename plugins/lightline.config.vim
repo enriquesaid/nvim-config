@@ -2,7 +2,7 @@ let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ ['mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'tabline': {
       \   'right': [ ['fugitive'] ],
