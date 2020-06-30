@@ -26,6 +26,7 @@ set nobackup
 set nowritebackup
 set relativenumber number
 set linebreak
+set showtabline=2
 set cc=80
 set autoindent
 set smartindent
@@ -119,7 +120,6 @@ let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
-
 
 " Color Scheme
 colorscheme dracula
