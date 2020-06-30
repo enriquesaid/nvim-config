@@ -52,6 +52,7 @@ set termencoding=utf-8
 set scrolloff=10
 set backspace=indent,eol,start
 set mousehide
+set mouse=n
 
 " Searching
 set hlsearch
