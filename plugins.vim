@@ -24,11 +24,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
 
   " File Explore
-    Plug 'scrooloose/nerdtree'
-    Plug 'jistr/vim-nerdtree-tabs'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    Plug 'tsony-tsonev/nerdtree-git-plugin'
+    " Plug 'preservim/nerdtree'
+    " Plug 'jistr/vim-nerdtree-tabs'
+    " Plug 'ryanoasis/vim-devicons'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " Plug 'tsony-tsonev/nerdtree-git-plugin'
 
   " Searching
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
 
     let g:make = 'gmake'
     if exists('make')
-            let g:make = 'make'
+      let g:make = 'make'
     endif
     Plug 'Shougo/vimproc.vim', {'do': g:make}
 
@@ -79,7 +79,7 @@ call plug#begin('~/.vim/plugged')
   " }}}
 
   " JavaScript {{{
-      Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
+    Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
       if executable('npm')
         Plug 'prettier/vim-prettier', {
               \ 'do': 'npm install',
@@ -97,7 +97,7 @@ call plug#begin('~/.vim/plugged')
               \ 'vue',
               \ 'yaml'
               \ ] }
-      endif
+    endif
   " }}}
 
   " JSON {{{
@@ -110,17 +110,17 @@ call plug#begin('~/.vim/plugged')
 
   " Go {{{
     if executable('go')
-        Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-        Plug 'mdempsky/gocode', { 'for': 'go' }
+      Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+      Plug 'mdempsky/gocode', { 'for': 'go' }
     endif
   " }}}
 
   " Ruby/Rails {{{
-      Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-      Plug 'tpope/vim-rails', { 'for': 'ruby' }
+    Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+    Plug 'tpope/vim-rails', { 'for': 'ruby' }
   " }}}
 
   " Sonic PI {{{
-      Plug 'Widdershin/sonic-pi-cli'
+    Plug 'Widdershin/sonic-pi-cli'
   " }}}
 call plug#end()

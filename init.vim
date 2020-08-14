@@ -64,7 +64,17 @@ map <leader><space> :let @/=''<cr>
 
 " Netrw
 let g:netrw_banner = 0
-
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 15
+map <c-m> :Vex <cr>
+function! s:close_explorer_buffers()
+    for i in range(1, bufnr('$'))
+        if getbufvar(i, '&filetype') == "netrw"
+            silent exe 'bdelete! ' . i
+        endif
+    endfor
+endfunction
+map <C-n> :call <sid>close_explorer_buffers() <cr>
 "" Copy/Paste/Cut
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
