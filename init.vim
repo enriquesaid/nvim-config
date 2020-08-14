@@ -52,7 +52,7 @@ set termencoding=utf-8
 set scrolloff=10
 set backspace=indent,eol,start
 set mousehide
-set mouse=n
+set mouse=a
 
 " Searching
 set hlsearch
@@ -75,6 +75,7 @@ function! s:close_explorer_buffers()
     endfor
 endfunction
 map <C-n> :call <sid>close_explorer_buffers() <cr>
+
 "" Copy/Paste/Cut
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
@@ -122,9 +123,10 @@ nnoremap <leader>sc :CloseSession<CR>
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-" Split
+" Split & Tab
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
+nmap <silent> <C-t> :tabnew <CR>
 
 " Session Management
 let g:session_directory = "~/.config/nvim/session"
