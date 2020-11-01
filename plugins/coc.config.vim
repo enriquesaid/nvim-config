@@ -1,13 +1,11 @@
 " COC
  let g:coc_global_extensions = [
-    \ 'coc-snippets',
     \ 'coc-actions',
     \ 'coc-lists',
     \ 'coc-emmet',
     \ 'coc-pairs',
-    \ 'coc-flutter',
+    \ 'coc-flutter-tools',
     \ 'coc-tsserver',
-    \ 'coc-floaterm',
     \ 'coc-html',
     \ 'coc-css',
     \ 'coc-emoji',
@@ -75,6 +73,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 "xmap <leader>a  <Plug>(coc-codeaction-selected)
 "nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+vmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current line.
 nmap <leader>a  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.

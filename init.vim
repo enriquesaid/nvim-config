@@ -1,5 +1,3 @@
-set nocompatible
-filetype plugin indent on
 let mapleader = ","
 
 " Plugins
@@ -12,7 +10,6 @@ endfor
 syntax on
 set autoread
 set title
-set modelines=0
 set number
 set wrap
 set textwidth=80
@@ -24,7 +21,7 @@ set expandtab
 set list
 set nobackup
 set nowritebackup
-set relativenumber number
+set relativenumber
 set linebreak
 set showtabline=2
 set cc=80
@@ -33,7 +30,6 @@ set smartindent
 set timeoutlen=1000
 set ttimeoutlen=0
 set updatetime=3000
-set shortmess+=c
 set signcolumn=yes
 set noswapfile
 set autoread
@@ -66,15 +62,6 @@ map <leader><space> :let @/=''<cr>
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
-map <c-m> :Vex <cr>
-function! s:close_explorer_buffers()
-    for i in range(1, bufnr('$'))
-        if getbufvar(i, '&filetype') == "netrw"
-            silent exe 'bdelete! ' . i
-        endif
-    endfor
-endfunction
-map <C-n> :call <sid>close_explorer_buffers() <cr>
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
@@ -119,6 +106,10 @@ nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
+let g:session_directory = "~/.config/nvim/session"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
@@ -128,13 +119,8 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 nmap <silent> <C-t> :tabnew <CR>
 
-" Session Management
-let g:session_directory = "~/.config/nvim/session"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
-let g:session_command_aliases = 1
-
 " Color Scheme
 colorscheme dracula
 highlight Normal ctermbg=NONE
 highlight Floaterm ctermbg=232
+

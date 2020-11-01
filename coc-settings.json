@@ -3,6 +3,9 @@
     "javascript",
     "typescript",
     "dart",
-    "json"
-  ]
+    "json",
+    "css",
+    "html"
+  ],
+  "flutter.workspaceFolder.ignore": ["build"]
 }

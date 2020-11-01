@@ -17,21 +17,19 @@ call plug#begin('~/.vim/plugged')
     Plug 'pbrisbin/vim-mkdir'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'Raimondi/delimitMate'
-    Plug 'majutsushi/tagbar'
     Plug 'Yggdroot/indentLine'
+    Plug 'schickling/vim-bufonly'
 
   " Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 
   " File Explore
-    " Plug 'preservim/nerdtree'
-    " Plug 'jistr/vim-nerdtree-tabs'
-    " Plug 'ryanoasis/vim-devicons'
-    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    " Plug 'tsony-tsonev/nerdtree-git-plugin'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'ryanoasis/vim-devicons'
 
   " Searching
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'rking/ag.vim'
 
@@ -43,18 +41,19 @@ call plug#begin('~/.vim/plugged')
 
   " IntelliSense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'josa42/vim-lightline-coc'
 
   " Comments
     Plug 'tpope/vim-commentary'
 
-    "" Vim-Session
+  " Vim-Session
     Plug 'xolox/vim-misc'
     Plug 'xolox/vim-session'
 
   " Startup
     Plug 'mhinz/vim-startify'
 
-  " Git {{{
+  " Git
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'rbong/vim-flog', {
@@ -65,20 +64,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'ruanyl/vim-gh-line'
     Plug 'junegunn/vim-github-dashboard'
     Plug 'airblade/vim-gitgutter'
-  " }}}
 
-  " HTML {{{
+  " HTML
     Plug 'othree/html5.vim', { 'for': 'html' }
     Plug 'hokaccha/vim-html5validator', { 'for':  'html' }
-    Plug 'mustache/vim-mustache-handlebars'
-  " }}}
 
-  " CSS {{{
+  " CSS
     Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
     Plug 'gko/vim-coloresque', { 'for': ['css', 'scss', 'sass', 'stylus'] }
-  " }}}
 
-  " JavaScript {{{
+  " JavaScript
     Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
       if executable('npm')
         Plug 'prettier/vim-prettier', {
@@ -98,29 +93,23 @@ call plug#begin('~/.vim/plugged')
               \ 'yaml'
               \ ] }
     endif
-  " }}}
 
-  " JSON {{{
+  " JSON
     Plug 'elzr/vim-json', { 'for': 'json' }
-  " }}}
 
-  " Dart {{{
+  " Dart
     Plug 'dart-lang/dart-vim-plugin'
-  " }}}
 
-  " Go {{{
+  " Go
     if executable('go')
       Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
       Plug 'mdempsky/gocode', { 'for': 'go' }
     endif
-  " }}}
 
-  " Ruby/Rails {{{
+  " Ruby/Rails
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
     Plug 'tpope/vim-rails', { 'for': 'ruby' }
-  " }}}
 
-  " Sonic PI {{{
+  " Sonic PI
     Plug 'Widdershin/sonic-pi-cli'
-  " }}}
 call plug#end()

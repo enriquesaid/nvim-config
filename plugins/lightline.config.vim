@@ -1,37 +1,29 @@
 let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
-      \   'left': [ ['mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'currentfunction', 'coc_errors', 'coc_warnings', 'coc_ok', 'filename', 'modified' ] ],
+      \   'right': [ [ 'coc_status' ] ]
       \ },
       \ 'tabline': {
-      \   'right': [ ['fugitive'] ],
+      \   'right': [ [ 'fugitive' ] ],
       \ },
       \ 'component_function': {
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction',
       \   'fugitive': 'FugitiveHead',
-      \   'readonly': 'MyReadonly',
       \   'filename': 'MyFilename',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '⮁', 'right': '|' }
       \ }
 
-function! MyReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "⭤ "
-  else
-    return ""
-  endif
-endfunction
+call lightline#coc#register()
 
 function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-       \ ('' != expand('%') ? expand('%') : '[NoName]')
+  return '' != expand('%') ? expand('%') : '[NoName]'
 endfunction
 
-
-" Options
-set noshowmode
-set laststatus=2 " Use status bar even with single buffer
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
