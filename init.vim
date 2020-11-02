@@ -25,7 +25,6 @@ set nobackup
 set nowritebackup
 set relativenumber
 set linebreak
-set cmdheight=2
 set showtabline=2
 set laststatus=2
 set cc=80
