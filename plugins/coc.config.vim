@@ -1,5 +1,6 @@
 " COC
  let g:coc_global_extensions = [
+    \ 'coc-snippets',
     \ 'coc-actions',
     \ 'coc-lists',
     \ 'coc-emmet',
@@ -129,6 +130,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Flutter
 nmap <leader>fe  :CocCommand flutter.emulators<CR>
+nmap <leader>fa  :CocCommand flutter.attach<CR>
 nmap <leader>fr  :CocCommand flutter.run
 nmap <leader>fq  :CocCommand flutter.dev.quit<CR>
 nmap <leader>fh  :CocCommand flutter.dev.hotRestart<CR>

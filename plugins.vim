@@ -44,6 +44,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jsfaint/coc-neoinclude'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'josa42/vim-lightline-coc'
+    Plug 'honza/vim-snippets'
 
   " Comments
     Plug 'tpope/vim-commentary'
