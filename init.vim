@@ -1,3 +1,5 @@
+set nocompatible
+filetype off
 let mapleader = ","
 
 " Plugins
@@ -23,13 +25,15 @@ set nobackup
 set nowritebackup
 set relativenumber
 set linebreak
+set cmdheight=2
 set showtabline=2
+set laststatus=2
 set cc=80
 set autoindent
 set smartindent
 set timeoutlen=1000
 set ttimeoutlen=0
-set updatetime=3000
+set updatetime=300
 set signcolumn=yes
 set noswapfile
 set autoread
