@@ -73,13 +73,11 @@ nmap <leader>f  <Plug>(coc-format-selected)
 "xmap <leader>a  <Plug>(coc-codeaction-selected)
 "nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader><S-a> v  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current line.
 nmap <leader>a  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>af  <Plug>(coc-fix-current)
-
-nmap <leader>al <Plug>(coc-codelens-action)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -133,5 +131,5 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nmap <leader>fe  :CocCommand flutter.emulators<CR>
 nmap <leader>fr  :CocCommand flutter.run
 nmap <leader>fq  :CocCommand flutter.dev.quit<CR>
-nmap <leader>fr  :CocCommand flutter.dev.hotRestart<CR>
+nmap <leader>fh  :CocCommand flutter.dev.hotRestart<CR>
 nmap <leader>fl  :CocCommand flutter.dev.openDevLog<CR>
