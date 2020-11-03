@@ -10,6 +10,7 @@ endfor
 
 " Settings
 syntax on
+set hidden
 set autoread
 set title
 set number
