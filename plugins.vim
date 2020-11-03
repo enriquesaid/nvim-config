@@ -40,11 +40,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/vimproc.vim', {'do': g:make}
 
   " IntelliSense
-    Plug 'Shougo/neoinclude.vim'
-    Plug 'jsfaint/coc-neoinclude'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'josa42/vim-lightline-coc'
     Plug 'honza/vim-snippets'
+    Plug 'josa42/vim-lightline-coc'
 
   " Comments
     Plug 'tpope/vim-commentary'
