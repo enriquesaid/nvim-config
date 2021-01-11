@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
 let mapleader = ","
+nnoremap ; :
 
 " Plugins
 source $HOME/.config/nvim/plugins.vim
