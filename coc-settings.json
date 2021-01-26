@@ -3,9 +3,11 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "codeLens.enable": false,
+  "coc.preferences.enableFloatHighlight": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
+    "typescriptreact",
     "dart",
     "json",
     "css",
