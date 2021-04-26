@@ -3,7 +3,9 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "codeLens.enable": false,
-  "coc.preferences.enableFloatHighlight": false,
+  "coc.preferences.enableMessageDialog": true,
+  "coc.preferences.enableFloatHighlight": true,
+  "javascript.preferences.importModuleSpecifier": "auto",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
