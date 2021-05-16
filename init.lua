@@ -10,3 +10,5 @@ vim.cmd [[
 
 require'config.lsp'
 require'config.autocomplete'
+require'config.treesitter'
+require'config.telescope'
