@@ -7,3 +7,6 @@ vim.cmd [[
   source ~/.config/nvim/settings.vim
   source ~/.config/nvim/keymappings.vim
 ]]
+
+require'config.lsp'
+require'config.autocomplete'
