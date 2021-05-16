@@ -3,11 +3,10 @@ my nvim config
 
 # requirements
 
-* [nvim](https://neovim.io/) 🤪
+* [nvim 0.5+](https://neovim.io/) 🤪
 * [vim-plug](https://github.com/junegunn/vim-plug)
-* [fzf](https://github.com/junegunn/fzf)
 
 # color scheme
 
-* [dracula](https://draculatheme.com/vim)
+* [tokyonight](https://github.com/folke/tokyonight.nvim)
 
