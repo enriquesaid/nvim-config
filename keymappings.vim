@@ -66,3 +66,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
+
+" indentLine
+autocmd FileType markdown let g:indentLine_enabled=0
