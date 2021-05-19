@@ -69,3 +69,22 @@ let g:airline#extensions#tabline#show_tab_type = 0
 
 " indentLine
 autocmd FileType markdown let g:indentLine_enabled=0
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+
+" Goyo
+function! s:goyo_enter()
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()

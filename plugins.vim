@@ -31,6 +31,8 @@ Plug 'TaDaa/vimade'
 Plug 'RRethy/vim-illuminate'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -80,5 +82,9 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Dart
 Plug 'dart-lang/dart-vim-plugin'
+
+" Markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
 
 call plug#end()
