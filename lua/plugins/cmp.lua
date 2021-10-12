@@ -26,25 +26,31 @@ cmp.setup{
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then cmp.select_next_item({
-        behavior = cmp.SelectBehavior.Select
-      })
-      elseif luasnip.expand_or_jumpable() then luasnip.expand_or_jump()
-      elseif has_words_before() then cmp.complete()
-      else fallback() end end, { "i", "s" }
+    ["<Tab>"] = cmp.mapping(
+      function(fallback)
+        if cmp.visible() then cmp.select_next_item({
+          behavior = cmp.SelectBehavior.Select
+        })
+        elseif luasnip.expand_or_jumpable() then luasnip.expand_or_jump()
+        elseif has_words_before() then cmp.complete()
+        else fallback() end
+      end,
+      { "i", "s" }
     ),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then cmp.select_prev_item({
-        behavior = cmp.SelectBehavior.Select
-      })
-      elseif luasnip.jumpable(-1) then luasnip.jump(-1)
-      else fallback() end end, { "i", "s" }
+    ["<S-Tab>"] = cmp.mapping(
+      function(fallback)
+        if cmp.visible() then cmp.select_prev_item({
+          behavior = cmp.SelectBehavior.Select
+        })
+        elseif luasnip.jumpable(-1) then luasnip.jump(-1)
+        else fallback() end
+      end,
+      { "i", "s" }
     ),
   },
   sources = {
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
   }

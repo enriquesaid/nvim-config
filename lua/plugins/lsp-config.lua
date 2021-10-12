@@ -7,7 +7,6 @@ local on_attach = function(_, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', ns)
   buf_set_keymap('n', 'gf', '<cmd>lua vim.lsp.buf.definition()<CR>', ns)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', ns)
@@ -30,7 +29,7 @@ end
 require'lspinstall'.setup{}
 
 -- Lua
-require'lspconfig'.lua.setup {
+require'lspconfig'.lua.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -41,3 +40,12 @@ require'lspconfig'.lua.setup {
     }
   }
 }
+
+-- Flutter
+require("flutter-tools").setup{
+  lsp = {
+    on_attach = on_attach,
+    capabilities = capabilities
+  },
+}
+
