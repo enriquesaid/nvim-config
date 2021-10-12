@@ -11,3 +11,23 @@ my nvim config
 
 * [dracula](https://github.com/dracula/vim)
 
+# install
+
+```
+:PaqInstall
+:PaqSync
+
+:LspInstall lua
+:LspInstall typescript
+:LspInstall html
+:LspInstall css
+
+:TSInstall lua
+:TSInstall javascript
+:TSInstall typescript
+:TSInstall json
+:TSInstall html
+:TSInstall css
+:TSInstall yaml
+:TSInstall dart
+```
