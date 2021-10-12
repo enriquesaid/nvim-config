@@ -41,6 +41,16 @@ require'lspconfig'.lua.setup{
   }
 }
 
+-- HTML / CSS
+require'lspconfig'.html.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+require'lspconfig'.css.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
 -- Typescript
 require'lspconfig'.typescript.setup{
   on_attach = on_attach,
