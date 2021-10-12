@@ -36,9 +36,6 @@ require('paq') {
   -- Git
   'lewis6991/gitsigns.nvim';
 
-  -- Lua
-  'nvim-lua/popup.nvim';
-
   -- Js/Ts
   'pangloss/vim-javascript';
   'MaxMEllon/vim-jsx-pretty';
