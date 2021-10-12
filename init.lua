@@ -1,14 +1,17 @@
-vim.g.mapleader = ','
-vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
+-- Settings & Keys
+require 'settings'
+require 'keymaps'
 
-vim.cmd [[
-  source ~/.config/nvim/config.vim
-  source ~/.config/nvim/plugins.vim
-  source ~/.config/nvim/settings.vim
-  source ~/.config/nvim/keymappings.vim
-]]
+-- Plugins
+require 'plugins.paq'
+require 'plugins.feline'
+require 'plugins.tree'
+require 'plugins.treesitter'
+require 'plugins.telescope'
+require 'plugins.lsp-config'
+require 'plugins.flutter-tools'
+require 'plugins.cmp'
+require 'plugins.autopairs'
+require 'plugins.gitsigns'
+require 'plugins.bufferline'
 
-require'config.lsp'
-require'config.autocomplete'
-require'config.treesitter'
-require'config.telescope'
