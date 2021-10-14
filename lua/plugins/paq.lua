@@ -3,6 +3,7 @@ require('paq') {
   'nvim-lua/plenary.nvim';
 
   -- Visual
+  'glepnir/dashboard-nvim';
   'dracula/vim';
   'TaDaa/vimade';
   'famiu/feline.nvim';

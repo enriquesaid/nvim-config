@@ -4,6 +4,7 @@ require 'keymaps'
 
 -- Plugins
 require 'plugins.paq'
+require 'plugins.dashboard'
 require 'plugins.feline'
 require 'plugins.bufferline'
 require 'plugins.tree'
