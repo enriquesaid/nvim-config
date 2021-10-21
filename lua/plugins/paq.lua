@@ -16,7 +16,7 @@ require('paq') {
 
   -- LSP
   'neovim/nvim-lspconfig';
-  'kabouzeid/nvim-lspinstall';
+  'williamboman/nvim-lsp-installer';
   'hrsh7th/nvim-cmp';
   'hrsh7th/cmp-nvim-lsp';
   'hrsh7th/cmp-path';

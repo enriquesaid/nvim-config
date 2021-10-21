@@ -1,6 +1,7 @@
 local capabilities = require'cmp_nvim_lsp'.update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
+
 local ns = { noremap = true, silent = true }
 local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -25,36 +26,17 @@ local on_attach = function(_, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', ns)
 end
 
-require'lspinstall'.setup{}
-
--- Lua
-require'lspconfig'.lua.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(
+  function (server)
+    local opts = {
+      on_attach = on_attach,
+      capabilities = capabilities,
     }
-  }
-}
-
--- HTML / CSS
-require'lspconfig'.html.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require'lspconfig'.css.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
--- Typescript
-require'lspconfig'.typescript.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+  end
+)
 
 -- Flutter
 require("flutter-tools").setup{
