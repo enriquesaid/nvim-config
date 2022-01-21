@@ -5,7 +5,6 @@ require('paq') {
   -- Visual
   'glepnir/dashboard-nvim';
   'dracula/vim';
-  'TaDaa/vimade';
   'famiu/feline.nvim';
   'kyazdani42/nvim-web-devicons';
   'kyazdani42/nvim-tree.lua';
