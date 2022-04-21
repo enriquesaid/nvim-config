@@ -13,7 +13,7 @@ my nvim config
 
 ## install
 
-```
+```vim
 :PaqInstall
 :PaqSync
 
