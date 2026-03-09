@@ -46,12 +46,6 @@ map("v", ">", ">gv", { noremap = true, silent = true })
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 map("n", "<Leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { noremap = true, silent = true, desc = "Explorer" })
 
--- Telescope
-map("n", "<Leader><Leader>", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true, desc = "Find files" })
-map("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true, desc = "Live grep" })
-map("n", "<Leader>fb", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true, desc = "Buffers" })
-map("n", "<Leader>fh", "<cmd>Telescope help_tags<CR>", { noremap = true, silent = true, desc = "Help" })
-
 -- Diagnostics
 map("n", "<Leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
