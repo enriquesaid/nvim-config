@@ -1,56 +1,48 @@
 local g = vim.g
 local opt = vim.opt
-local cmd = vim.cmd
 
 -- Leader
-g.mapleader = ','
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- General
-opt.compatible = false
-opt.mouse = 'a'
-opt.clipboard = 'unnamedplus'
+opt.mouse = "a"
+opt.clipboard = "unnamedplus"
 opt.swapfile = false
+opt.undofile = true
 opt.hidden = true
-opt.history = 100
-opt.lazyredraw = true
-opt.synmaxcol = 240
+opt.updatetime = 250
+opt.timeoutlen = 300
 
 -- Theme
 opt.termguicolors = true
-cmd [[colorscheme dracula]]
 
 -- Editor
 opt.number = true
+opt.relativenumber = true
 opt.wrap = false
-opt.signcolumn = 'yes'
-opt.showmatch = true
+opt.signcolumn = "yes"
 opt.showmode = false
-opt.foldmethod = 'marker'
 opt.splitright = true
 opt.splitbelow = true
-opt.conceallevel = 0
-opt.colorcolumn = '80'
 opt.cursorline = true
 opt.scrolloff = 10
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.smartindent = true
-opt.list = true
-opt.listchars = { eol = '¬' }
-opt.shortmess:append {c = true}
-opt.whichwrap:append {
-  ['<'] = true,
-  ['>'] = true,
-  [','] = true,
-  h = true,
-  l = true
-}
+opt.ignorecase = true
+opt.smartcase = true
+opt.shortmess:append({ c = true, I = true })
 
 -- Terminal
-cmd [[command! Term :botright split term://$SHELL]]
-cmd [[
-  autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-  autocmd TermOpen * startinsert
-  autocmd BufLeave term://* stopinsert
-]]
+vim.cmd([[command! Term :botright split term://$SHELL]])
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.cursorline = false
+    vim.cmd("startinsert")
+  end,
+})
