@@ -1,41 +1,52 @@
-local set = vim.api.nvim_set_keymap
-local ns = { noremap = true, silent = true }
+local map = vim.keymap.set
 
 -- Command
-set("n", ";", ":", { noremap = true })
+map("n", ";", ":", { noremap = true })
 
 -- Terminal
-set("t", "<Esc>", "<C-\\><C-n><C-w><C-w>", ns)
+map("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
--- Clean Search
-set("n", "<Leader><Space>", ":let @/=''<CR>", ns)
+-- Clear search
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
 
--- Window
-set("n", "<C-j>", ":resize -2<CR>", ns)
-set("n", "<C-k>", ":resize +2<CR>", ns)
-set("n", "<C-h>", ":vertical resize -2<CR>", ns)
-set("n", "<C-l>", ":vertical resize +2<CR>", ns)
-set("n", "<Leader>h", ":<C-u>split<CR>", ns)
-set("n", "<Leader>v", ":<C-u>vsplit<CR>", ns)
+-- Window navigation
+map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+map("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
--- Moving
-set("n", "j", "gj", ns)
-set("n", "k", "gk", ns)
+-- Window splits
+map("n", "<Leader>h", "<cmd>split<CR>", { noremap = true, silent = true })
+map("n", "<Leader>v", "<cmd>vsplit<CR>", { noremap = true, silent = true })
+
+-- Window resize
+map("n", "<C-Up>", "<cmd>resize +2<CR>", { noremap = true, silent = true })
+map("n", "<C-Down>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
+map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { noremap = true, silent = true })
+map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { noremap = true, silent = true })
+
+-- Moving in wrapped lines
+map("n", "j", "gj", { noremap = true, silent = true })
+map("n", "k", "gk", { noremap = true, silent = true })
 
 -- Buffers
-set("n", "<Tab>", ":BufferLineCycleNext<CR>", ns)
-set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", ns)
-set("n", "<C-d>", ":bd<CR>", ns)
-set("n", "<C-t>", ":tabnew<CR>", ns)
+map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true })
+map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+map("n", "<Leader>bd", "<cmd>bdelete<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
--- Nvim Tree
-set("n", "<C-n>", ":NvimTreeToggle<CR>", ns)
-set("n", "<Leader>n", ":NvimTreeFindFile<CR>", ns)
+-- Move lines in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
--- Telescope
-set("n", "<Leader><Leader>", ":Telescope find_files<CR>", ns)
-set("n", "<C-p>", ":Telescope buffers<CR>", ns)
+-- Better indenting
+map("v", "<", "<gv", { noremap = true, silent = true })
+map("v", ">", ">gv", { noremap = true, silent = true })
 
--- Commentary
-set("n", "<Leader>cc", ":Commentary<CR>", ns)
-set("v", "<Leader>cc", ":Commentary<CR>", ns)
+-- NvimTree
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
+map("n", "<Leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { noremap = true, silent = true, desc = "Explorer" })
+
+-- Diagnostics
+map("n", "<Leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })

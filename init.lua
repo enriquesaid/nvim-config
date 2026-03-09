@@ -1,17 +1,19 @@
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
 -- Settings & Keys
-require 'settings'
-require 'keymaps'
+require("settings")
+require("keymaps")
 
 -- Plugins
-require 'plugins.paq'
-require 'plugins.dashboard'
-require 'plugins.feline'
-require 'plugins.bufferline'
-require 'plugins.tree'
-require 'plugins.telescope'
-require 'plugins.treesitter'
-require 'plugins.lsp-config'
-require 'plugins.cmp'
-require 'plugins.autopairs'
-require 'plugins.gitsigns'
-
+require("lazy").setup("plugins", {
+  change_detection = { notify = false },
+})
