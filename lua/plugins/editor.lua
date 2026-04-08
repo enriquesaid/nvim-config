@@ -1,3 +1,7 @@
+-- ╭──────────────────────────────────────────────────────╮
+-- │              Editor utilities                        │
+-- ╰──────────────────────────────────────────────────────╯
+
 return {
   {
     "windwp/nvim-autopairs",
@@ -5,16 +9,13 @@ return {
     config = true,
   },
   {
-    "numToStr/Comment.nvim",
-    keys = {
-      { "gcc", mode = "n", desc = "Toggle comment" },
-      { "gc", mode = "v", desc = "Toggle comment" },
-    },
-    config = true,
-  },
-  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = true,
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
 }

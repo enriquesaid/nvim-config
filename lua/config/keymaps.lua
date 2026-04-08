@@ -1,23 +1,27 @@
+-- ╭──────────────────────────────────────────────────────╮
+-- │                     Keymaps                          │
+-- ╰──────────────────────────────────────────────────────╯
+
 local map = vim.keymap.set
 
--- Command
+-- Command shortcut
 map("n", ";", ":", { noremap = true })
 
--- Terminal
+-- Terminal escape
 map("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- Clear search
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
 
 -- Window navigation
-map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
-map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
-map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
-map("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Window left" })
+map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Window down" })
+map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Window up" })
+map("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Window right" })
 
 -- Window splits
-map("n", "<Leader>h", "<cmd>split<CR>", { noremap = true, silent = true })
-map("n", "<Leader>v", "<cmd>vsplit<CR>", { noremap = true, silent = true })
+map("n", "<Leader>h", "<cmd>split<CR>", { noremap = true, silent = true, desc = "Horizontal split" })
+map("n", "<Leader>v", "<cmd>vsplit<CR>", { noremap = true, silent = true, desc = "Vertical split" })
 
 -- Window resize
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { noremap = true, silent = true })
@@ -30,8 +34,8 @@ map("n", "j", "gj", { noremap = true, silent = true })
 map("n", "k", "gk", { noremap = true, silent = true })
 
 -- Buffers
-map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true })
-map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+map("n", "<S-h>", "<cmd>bprevious<CR>", { noremap = true, silent = true, desc = "Previous buffer" })
+map("n", "<S-l>", "<cmd>bnext<CR>", { noremap = true, silent = true, desc = "Next buffer" })
 map("n", "<Leader>bd", "<cmd>bdelete<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
 -- Move lines in visual mode
@@ -41,10 +45,6 @@ map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 -- Better indenting
 map("v", "<", "<gv", { noremap = true, silent = true })
 map("v", ">", ">gv", { noremap = true, silent = true })
-
--- NvimTree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
-map("n", "<Leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { noremap = true, silent = true, desc = "Explorer" })
 
 -- Diagnostics
 map("n", "<Leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
