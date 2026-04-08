@@ -1,3 +1,7 @@
+-- ╭──────────────────────────────────────────────────────╮
+-- │         LSP — Mason + nvim-lspconfig + blink         │
+-- ╰──────────────────────────────────────────────────────╯
+
 return {
   {
     "williamboman/mason.nvim",
@@ -25,12 +29,12 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
+      "saghen/blink.cmp",
     },
     config = function()
       local lspconfig = require("lspconfig")
-      local cmp_lsp = require("cmp_nvim_lsp")
-      local capabilities = cmp_lsp.default_capabilities()
+      -- Use blink.cmp capabilities instead of cmp-nvim-lsp
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       local on_attach = function(_, bufnr)
         local map = function(keys, func, desc)
